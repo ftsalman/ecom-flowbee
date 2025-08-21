@@ -327,6 +327,10 @@ export const dummyProducts = [
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
     rating: 4.5,
+    status: "new",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "gd47g34h",
@@ -345,6 +349,10 @@ export const dummyProducts = [
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
     rating: 4.5,
+    status: "new",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "NestFood",
   },
   {
     _id: "gd48g45h",
@@ -362,6 +370,10 @@ export const dummyProducts = [
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
     rating: 4.5,
+  status: "new",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "gd49g56h",
@@ -379,6 +391,10 @@ export const dummyProducts = [
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
     rating: 4.5,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "gd50g67h",
@@ -395,6 +411,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
 
   // Fruits
@@ -415,6 +435,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "new",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek52j23k",
@@ -431,6 +455,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "new",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek53j34k",
@@ -447,6 +475,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "new",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek54j45k",
@@ -464,6 +496,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "new",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek55j56k",
@@ -480,6 +516,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
 
   // Dairy
@@ -499,6 +539,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek57j78k",
@@ -515,6 +559,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek58j89k",
@@ -531,6 +579,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "new",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek59j90k",
@@ -547,6 +599,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek60j01k",
@@ -563,6 +619,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
 
   // Drinks
@@ -581,6 +641,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek62j23k",
@@ -597,6 +661,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek63j34k",
@@ -613,6 +681,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek64j45k",
@@ -629,6 +701,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek65j56k",
@@ -645,6 +721,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
 
   // Grains
@@ -663,6 +743,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "out",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek67j78k",
@@ -711,6 +795,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "new",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
   {
     _id: "ek70j01k",
@@ -727,6 +815,10 @@ export const dummyProducts = [
     createdAt: "2025-03-25T07:17:46.018Z",
     updatedAt: "2025-03-25T07:18:13.103Z",
     inStock: true,
+    status: "new",
+    discount: "",
+    oldPrice: 25.0,
+    brand: "Country Crock",
   },
 
   // Bakery

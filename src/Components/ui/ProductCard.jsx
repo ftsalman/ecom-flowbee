@@ -3,7 +3,11 @@ import { CardContainer } from "./CardContainer";
 import { Card } from "./Card";
 import { cn } from "../../utils/utils";
 import Button from "./button/Button";
-import { IconFavorites } from "../../assets/icons/InterfaceIcons";
+import {
+  IconFavorites,
+  IconShoppingCart,
+  IconStar,
+} from "../../assets/icons/InterfaceIcons";
 import { Link } from "react-router-dom";
 
 export const ProductCard = ({
@@ -11,73 +15,149 @@ export const ProductCard = ({
   loading = false,
   className = "",
   ImageClass,
+  toggleFav = () => {},
+  favourites = new Set(),
 }) => {
+  if (loading) return <SkeletonProductCard />;
 
-      if (loading) return <SkeletonProductCard />;
+  const getTagStyles = (tag) => {
+    switch (tag) {
+      case "new":
+        return "bg-green-500 text-white";
+      case "out":
+        return "bg-red-600 text-white";
+      case "sale":
+        return "bg-yellow-400 text-white";
+      default:
+        return "";
+    }
+  };
+
   return (
-    <CardContainer className="h-fit space-y-2 px-4 sm:px-8 md:px-1 bg-transparent">
-      <Card
-        className={cn(
-          "relative w-60 flex flex-col items-center p-4 bg-[#F7F7F7]",
-          className
-        )}
-      >
-        <Button
-          variant="outline"
-          onClick={() => onWishlistClick?.(data)}
-          className="absolute cursor-pointer top-0 right-0 text-gray-400 hover:text-red-500"
-        >
-          <IconFavorites size="24" />
-        </Button>
+    <CardContainer
+      className={cn(
+        "h-fit space-y-2 px-4 sm:px-8 md:px-1 bg-transparent",
+        className
+      )}
+    >
+      <Card className="space-y-3 p-4 w-[255px] max-w-full h-full">
+        <div className="relative flex justify-center items-center p-2 rounded-md border border-gray-200 bg-gray-100 h-40">
+          <div>
+            {data.status && (
+              <span
+                className={`absolute top-0 left-0 px-1 py-1 text-white  font-semibold text-xs rounded-r-4xl ${getTagStyles(
+                  data.status
+                )}`}
+              >
+                {data.status === "sale"
+                  ? `-${data.discount}`
+                  : data.status === "new"
+                  ? "New"
+                  : data.status === "out"
+                  ? "Out of Stock"
+                  : ""}
+              </span>
+            )}
+            <Button
+              variant="secondary"
+              size="icon"
+              onClick={() => toggleFav(data.id)}
+              className="absolute top-0 right-0 bg-transparent shadow-none border-none rounded-full p-1.5"
+            >
+              <IconFavorites
+                size="24"
+                className={
+                  favourites.has(data.id) ? "text-red-500" : "text-gray-600"
+                }
+              />
+            </Button>
+          </div>
 
-        <Link to={``} className="flex flex-col items-center gap-2 w-full">
           <img
-            src={data.img}
-            alt={data.label}
+            src={data.image}
+            alt={data.name}
             className={cn(
-              "w-full h-44 mt-2 mb-2 object-contain hover:scale-105 transition-transform duration-300",
+              "w-full h-full hover:scale-110 transition-all duration-300 object-contain",
               ImageClass
             )}
-            loading="lazy"
           />
-        </Link>
-
-        <div className="text-center space-y-1">
-          <h5 className="text-sm font-medium line-clamp-2">{data.label}</h5>
-          <p className="text-xl font-semibold">
-            ${data.price.toLocaleString()}
-          </p>
         </div>
 
-        <Button
-          size="md"
-          className="w-full mt-4 cursor-pointer bg-black text-white hover:bg-gray-800"
-          onClick={() => onBuyClick?.(data)}
-        >
-          Buy Now
-        </Button>
+        <div>
+          <p className="text-xs text-gray-500">{data.category}</p>
+          <h2 className="text-gray-900 font-semibold text-sm mt-1 line-clamp-2">
+            {data.name}
+          </h2>
+        </div>
+
+        <div>
+          {/* Rating */}
+          <div className="flex items-center text-yellow-400 text-xs mb-1">
+            {Array.from({ length: 5 }).map((_, index) =>
+              index < data.rating ? (
+                <IconStar key={index} size="12" fill="currentColor" />
+              ) : (
+                <IconStar
+                  key={index}
+                  size="12"
+                  fill="none"
+                  stroke="currentColor"
+                />
+              )
+            )}
+            <span className="text-gray-500 text-xs ml-1">({data.rating})</span>
+          </div>
+
+          <p className="text-sm mb-1 font-medium text-gray-950">
+            By <span className="text-yellow-500">{data.brand}</span>
+          </p>
+
+          {/* Price and Add to Cart */}
+          <div className="flex items-center justify-between gap-1 mt-2">
+            <div className="flex items-center gap-1">
+              <span className="text-yellow-400 text-sm font-semibold">
+                AED{(data.price || 0).toFixed(2)}
+              </span>
+              {data.oldPrice && (
+                <span className="line-through text-gray-400 text-xs">
+                  {data.oldPrice.toFixed(2)}
+                </span>
+              )}
+            </div>
+
+            <Button
+              variant="secondary"
+              size="sm"
+              className="flex items-center  gap-2 bg-yellow-400 hover:bg-yellow-500 px-2 text-white w-full max-w-[]"
+              disabled={data.status === "out"}
+            >
+              <IconShoppingCart size="15" />
+              <span className="text-xs max-w-full w-[4rem] ">Add To Cart</span>
+            </Button>
+          </div>
+        </div>
       </Card>
     </CardContainer>
   );
 };
 
-
-
 export const SkeletonProductCard = () => {
   return (
-    <CardContainer className="h-fit space-y-4 px-4 sm:px-8 md:px-1">
-      <Card className="relative w-60 flex flex-col items-center p-6 bg-[#F7F7F7] animate-pulse space-y-3">
-        <div className="absolute top-2 right-0 w-6 h-6 bg-gray-300 rounded-full" />
+    <Card className="space-y-3 p-4 w-[255px] max-w-full h-full animate-pulse">
+      <div className="h-40 w-full bg-gray-200 rounded-md" />
 
-        <div className="w-full h-44 mt-2 mb-2 bg-gray-200 rounded-md" />
+      <div className="h-3 w-20 bg-gray-200 rounded" />
 
-        <div className="text-center space-y-2 w-full">
-          <div className="h-4 bg-gray-300 rounded w-5/6 mx-auto" />
-          <div className="h-6 bg-gray-400 rounded w-1/2 mx-auto" />
-        </div>
+      <div className="h-4 w-40 bg-gray-200 rounded mt-2" />
 
-        <div className="h-10 bg-gray-300 rounded w-full mt-4" />
-      </Card>
-    </CardContainer>
+      <div className="h-3 w-24 bg-gray-200 rounded mt-2" />
+
+      <div className="h-3 w-32 bg-gray-200 rounded mt-2" />
+
+      <div className="flex items-center justify-between gap-2 mt-4">
+        <div className="h-4 w-16 bg-gray-200 rounded" />
+        <div className="h-8 w-20 bg-gray-300 rounded" />
+      </div>
+    </Card>
   );
 };

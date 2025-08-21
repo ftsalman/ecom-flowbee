@@ -4,6 +4,7 @@ import { Homepage } from "../pages/Homepage";
 import { HomeLayout } from "../layouts/HomeLayout";
 import { LoginPage } from "../pages/auth/LoginPage";
 import { SignupPage } from "../pages/auth/SignupPage";
+import { ProductsPage } from "../pages/ProductsPage";
 
  export const  router  =  createBrowserRouter([
     
@@ -41,6 +42,11 @@ import { SignupPage } from "../pages/auth/SignupPage";
       {
         index: true,
         element: <Homepage />,
+      },
+      {
+        path:"products",
+        element:<ProductsPage/>
+
       },
     //   {
     //     path: "products/:productId",

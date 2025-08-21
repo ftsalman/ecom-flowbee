@@ -20,7 +20,7 @@ export const Homepage = () => {
       <Service />
       <PromoBanner />
       <NewsLetter />
-      <Footer />
+    <Footer/>
     </div>
   );
 };
