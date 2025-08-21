@@ -1,34 +1,38 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { AuthLayout } from "../layouts/AuthLayout";
 import { Homepage } from "../pages/Homepage";
 import { HomeLayout } from "../layouts/HomeLayout";
+import { LoginPage } from "../pages/auth/LoginPage";
+import { SignupPage } from "../pages/auth/SignupPage";
 
  export const  router  =  createBrowserRouter([
-  // {
-  //   path: "/",
-  //   element: <Navigate to="/home" replace={true} />,
-  // },
-  // {
-  //   path: "auth",
-  //   children: [
-  //     {
-  //       path: "login",
-  //       element: (
-        //   <AuthLayout>
-  //           <LoginPage />
-  //         </AuthLayout>
-  //       ),
-  //     },
-  //     {
-  //       path: "signup",
-  //       element: (
-  //         <AuthLayout>
-  //           <SignupPage />
-  //         </AuthLayout>
-  //       ),
-  //     },
-  //   ],
-  // },
+    
+//    {
+//      path: "/",
+//      element: <Navigate to="/home" replace={true} />,
+//    },
+//    {
+//      path: "auth",
+//      children: [
+//        {
+//          path: "login",
+//          element: (
+//            <AuthLayout>
+//              <LoginPage />
+//            </AuthLayout>
+//          ),
+//        },
+//        {
+//          path: "signup",
+//          element: (
+//            <AuthLayout>
+//              <SignupPage />
+//            </AuthLayout>
+//          ),
+//        },
+//      ],
+//    },
+
 
   {
     path: "/",

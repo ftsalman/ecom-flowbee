@@ -93,7 +93,7 @@ export const BestProduct = () => {
                 {item.name}
               </h3>
 
-              <p className="text-lg font-semibold text-green-400 ">
+              <p className="text-lg font-semibold text-yellow-400 ">
                 ${item.offerPrice}{" "}
                 <span className="text-sm text-gray-400 line-through">
                   ${item.price}

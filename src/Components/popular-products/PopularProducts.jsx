@@ -332,7 +332,7 @@ export const PopularProducts = () => {
                       {/* Price and Add to Cart */}
                       <div className="flex items-center justify-between gap-1 mt-2">
                         <div className="flex items-center gap-1">
-                          <span className="text-green-600 text-sm font-semibold">
+                          <span className="text-yellow-400 text-sm font-semibold">
                             AED{item.price.toFixed(2)}
                           </span>
                           {item.oldPrice && (
@@ -345,7 +345,7 @@ export const PopularProducts = () => {
                         <Button
                           variant="secondary"
                           size="sm"
-                          className="flex items-center gap-2 bg-green-500 hover:bg-green-600 px-2 text-white w-full"
+                          className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 px-2 text-white w-full"
                           disabled={item.status === "out"}
                         >
                           <IconShoppingCart size="10" />

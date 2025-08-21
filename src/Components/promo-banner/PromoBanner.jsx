@@ -17,7 +17,7 @@ export const PromoBanner = () => {
 
         {/* Text Content */}
         <div className="flex-1 text-center  md:text-left px-6 mt-6 md:mt-0">
-          <p className="text-green-500 font-semibold text-sm mb-2 tracking-wider">
+          <p className="text-yellow-400 font-semibold text-sm mb-2 tracking-wider">
             COOL & REFRESHING
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-green-950 leading-snug mb-4">
@@ -32,7 +32,7 @@ export const PromoBanner = () => {
             <Button
               variant="secondary"
               size="md"
-              className="bg-green-600  hover:bg-green-500 text-white px-9 py-4 rounded-xl font-semibold   transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-yellow-400  hover:bg-yellow-500 text-white px-9 py-4 rounded-xl font-semibold   transition-all duration-300 transform hover:-translate-y-1"
             >
               Order Now{" "}
               <span className="ml-2">

@@ -114,7 +114,7 @@ export const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="mt-10 border-t border-gray-300 pt-4 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Flowbee.io All rights reserved.
+        © {new Date().getFullYear()} <span className=" text-yellow-400">Flowbee.io</span> All rights reserved.
       </div>
     </div>
   );
