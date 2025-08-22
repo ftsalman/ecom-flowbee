@@ -112,7 +112,7 @@ export const ProductsPage = () => {
 
           {/* Product List */}
           <List
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-2 w-full px-0 md:px-2"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-4  2xl:grid-cols-5 gap-2 w-full px-0 md:px-1"
             uniqueKey="id"
             data={sortedProducts}
             render={(item) => (

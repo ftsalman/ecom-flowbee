@@ -40,7 +40,7 @@ export const ProductCard = ({
         className
       )}
     >
-      <Card className="space-y-3 p-4 w-[255px] max-w-full h-full">
+      <Card className="space-y-3 p-4 w-[255px] max-w-[240px] h-full">
         <div className="relative flex justify-center items-center p-2 rounded-md border border-gray-200 bg-gray-100 h-40">
           <div>
             {data.status && (
@@ -115,11 +115,11 @@ export const ProductCard = ({
           {/* Price and Add to Cart */}
           <div className="flex items-center justify-between gap-1 mt-2">
             <div className="flex items-center gap-1">
-              <span className="text-yellow-400 text-sm font-semibold">
+              <span className="text-yellow-400 text-sm   leading-tight font-semibold">
                 AED{(data.price || 0).toFixed(2)}
               </span>
               {data.oldPrice && (
-                <span className="line-through text-gray-400 text-xs">
+                <span className="line-through  leading-tight text-gray-400 text-xs">
                   {data.oldPrice.toFixed(2)}
                 </span>
               )}
@@ -132,7 +132,7 @@ export const ProductCard = ({
               disabled={data.status === "out"}
             >
               <IconShoppingCart size="15" />
-              <span className="text-xs max-w-full w-[4rem] ">Add To Cart</span>
+              <span className="text-xs max-w-full  leading-tight w-[4rem] ">Add To Cart</span>
             </Button>
           </div>
         </div>
