@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { IconFavorites, IconHamburger, IconSearch, IconShoppingCart, IconUser } from "../../assets/icons/InterfaceIcons";
+import {
+  IconFavorites,
+  IconHamburger,
+  IconSearch,
+  IconShoppingCart,
+  IconUser,
+} from "../../assets/icons/InterfaceIcons";
 import { Searchbar } from "../ui/Searchbar";
+import { useShopContext } from "../../context/ShopContext";
 
 export const Navbar = () => {
-      const [searchValue, setSearchValue] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const { user, setuser, navigate, searchQuery, setSearchQuery } = useShopContext();
+
+  useEffect(() => {
+    if (searchQuery.length > 0) {
+      navigate("/products");
+    }
+  }, [searchQuery]);
+
   return (
     <nav className="w-full bg-white border-b border-gray-200 relative z-50">
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-20 h-[64px] flex items-center justify-between">
@@ -38,8 +53,7 @@ export const Navbar = () => {
           {/* Search input */}
           <div className="flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">
             <input
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
               type="text"
               placeholder="Search products..."

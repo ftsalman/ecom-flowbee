@@ -10,6 +10,7 @@ export const ShopContextProvider = ({ children }) => {
   const [bestsellers, setBestsellers] = useState([]);
   const [cart, setCart] = useState({});         
   const [wishlist, setWishlist] = useState([]); 
+  const [searchQuery,setSearchQuery]  =  useState({});
 
   useEffect(() => {
     setProducts(dummyProducts);
@@ -44,6 +45,7 @@ export const ShopContextProvider = ({ children }) => {
     isSeller, setIsSeller,
     products, cart, wishlist,
     addToCart, removeFromCart, toggleWishlist,
+    searchQuery,searchQuery
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;

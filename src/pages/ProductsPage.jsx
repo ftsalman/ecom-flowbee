@@ -10,11 +10,26 @@ import { List } from "../Components/ui/List";
 import { ProductCard } from "../Components/ui/ProductCard";
 
 export const ProductsPage = () => {
+  const { products = [], searchQuery } = useShopContext();
+
+  // States
   const [isLoading, setIsLoading] = useState(true);
   const [sortBy, setSortBy] = useState("rating"); // Default sort
   const [selectedFilters, setSelectedFilters] = useState({});
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-  const { products = [], filteredProducts = [], setFilters } = useShopContext();
+  // Apply search filter
+  useEffect(() => {
+    if (searchQuery.length > 0) {
+      setFilteredProducts(
+        products.filter((product) =>
+          product.name.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [products, searchQuery]);
 
   // Simulate loading
   useEffect(() => {
@@ -24,16 +39,11 @@ export const ProductsPage = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  // Apply filters when they change
-  // useEffect(() => {
-  //   setFilters(selectedFilters);
-  // }, [selectedFilters, setFilters]);
-
-  // Sort products based on selected criteria
+  // Sort products (based on filtered ones)
   const sortedProducts = useMemo(() => {
-    if (!products.length) return [];
+    if (!filteredProducts.length) return [];
 
-    return [...products].sort((a, b) => {
+    return [...filteredProducts].sort((a, b) => {
       switch (sortBy) {
         case "rating":
           return b.rating - a.rating;
@@ -47,7 +57,7 @@ export const ProductsPage = () => {
           return 0;
       }
     });
-  }, [products, sortBy]);
+  }, [filteredProducts, sortBy]);
 
   const handleSortChange = () => {
     const sortOptions = ["rating", "price-low", "price-high", "name"];
@@ -112,9 +122,9 @@ export const ProductsPage = () => {
 
           {/* Product List */}
           <List
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-4  2xl:grid-cols-5 gap-2 w-full px-0 md:px-1"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 gap-2 w-full px-0 md:px-1"
             uniqueKey="id"
-            data={sortedProducts}
+            data={sortedProducts} 
             render={(item) => (
               <ProductCard
                 loading={isLoading}
