@@ -5,6 +5,7 @@ import { HomeLayout } from "../layouts/HomeLayout";
 import { LoginPage } from "../pages/auth/LoginPage";
 import { SignupPage } from "../pages/auth/SignupPage";
 import { ProductsPage } from "../pages/ProductsPage";
+import { CategoriesPage } from "../pages/CategoriesPage";
 
  export const  router  =  createBrowserRouter([
     
@@ -46,6 +47,11 @@ import { ProductsPage } from "../pages/ProductsPage";
       {
         path:"products",
         element:<ProductsPage/>
+
+      },
+      {
+          path: "products",
+        element: <CategoriesPage />,
 
       },
     //   {
